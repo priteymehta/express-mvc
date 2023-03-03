@@ -1,0 +1,23 @@
+<%- include('layout/header.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <%- include('layout/content.ejs') %>
+    <label>Product(s): </label>
+    <main>
+        <% if (prods.length > 0) { %>
+            <div class="grid">
+                <% for (let product of prods) { %>
+                    <article>
+                        <header>
+                            <h3><%= product.productName %></h3>
+                        </header>                     
+                    </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>No Products Available.</h1>
+        <% } %>
+    </main>
+<%- include('layout/footer.ejs') %>
